@@ -86,7 +86,7 @@ static BSTDownManager *_bstDownManager = nil;
         didFinishDownloadingToURL:(NSURL *)location {
         //下载完成
     
-    NSError *error = [NSError new];
+//    NSError *error = [NSError new];
     if (downloadTask.bst_downloadModel.fileurl) {
         NSURL *toURL = [NSURL fileURLWithPath:downloadTask.bst_downloadModel.fileurl];
         NSFileManager *manager = [NSFileManager defaultManager];

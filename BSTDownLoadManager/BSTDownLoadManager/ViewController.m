@@ -20,12 +20,13 @@
     
     BSTDownLoadBaseModel *downloadmodel = [[BSTDownLoadBaseModel alloc] init];
     downloadmodel.downloadurl = @"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/8c1001e93901213f9b28233756e736d12e2e95c5.jpg";
-    downloadmodel.filename = @"1234567";
+    downloadmodel.filename = @"12";
     _downloadmodel = downloadmodel;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     [button setBackgroundColor:[UIColor redColor]];
     [button addTarget:self action:@selector(buttonpressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

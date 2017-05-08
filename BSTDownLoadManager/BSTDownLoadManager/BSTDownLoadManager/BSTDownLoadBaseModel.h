@@ -9,8 +9,12 @@
 //下载内容基类
 #import <Foundation/Foundation.h>
 @class BSTDownLoadOperation;
-
+@class BSTDownLoadBaseModel;
 #import <UIKit/UIKit.h>
+
+typedef void(^BSTDownloadStatusChanged)(BSTDownLoadBaseModel *model);
+typedef void(^BSTDownloadProgress)(BSTDownLoadBaseModel *model);
+
 typedef NS_ENUM(NSInteger, BSTDownloadStatus) {
     BSTDownloadStatusNone = 0,       // 初始状态
     BSTDownloadStatusRunning = 1,    // 下载中
@@ -46,6 +50,10 @@ typedef NS_ENUM(NSInteger, BSTDownloadType) {
 @property (nonatomic, assign) BSTDownloadType downloadtype;
 
 @property(nonatomic,assign)BSTDownloadStatus downloadstatus;
+
+@property(nonatomic,copy)BSTDownloadStatusChanged downloadstatuschanged;//下载状态改变block
+
+@property(nonatomic,copy)BSTDownloadProgress downloadprogress; //下载进度block
 
 @property (nonatomic,strong)BSTDownLoadOperation *operation;
 

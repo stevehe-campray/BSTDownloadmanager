@@ -39,4 +39,24 @@
     }
 
 }
+
+-(void)setProgress:(CGFloat)progress{
+    if (_progress != progress) {
+       _progress = progress;
+       
+        if (self.downloadprogress) {
+            self.downloadprogress(self);
+        }
+    }
+    
+}
+
+-(void)setDownloadstatus:(BSTDownloadStatus)downloadstatus{
+    if (_downloadstatus != downloadstatus) {
+        _downloadstatus = downloadstatus;
+        if (self.downloadstatuschanged) {
+            self.downloadstatuschanged(self);
+        }
+    }
+}
 @end
